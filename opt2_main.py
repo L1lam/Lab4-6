@@ -1,20 +1,36 @@
 import concertmodif
+import opt2_extras
 
 
 def opt2_1(concerts):
+    """
+    Remove every concert of an artist or band chosen by the user
+    :param concerts: dictionary of concerts, keyed by id
+    :type concerts: dict
+    :return: None
+    """
     if not concerts:
         print("No concerts available to remove.\n")
         return
+
+    opt2_extras.print_artists(concerts)
 
     artist = input("Input artist/band name to remove: ").strip().lower()
     concertmodif.remove_by_artist(concerts, artist)
 
 
 def opt2_2(concerts):
-    # Delete all concerts with ticket prices in a given interval.
+    """
+    Remove the concerts whose ticket price is inside a range given by the user
+    :param concerts: dictionary of concerts, keyed by id
+    :type concerts: dict
+    :return: None
+    """
     if not concerts:
         print("No concerts available to remove.\n")
         return
+
+    opt2_extras.print_prices(concerts)
 
     min_price = int(input("Input minimum price: "))
     max_price = int(input("Input maximum price: "))
@@ -22,10 +38,17 @@ def opt2_2(concerts):
 
 
 def opt2_3(concerts):
-    # Delete all concerts taking place in a given date interval.
+    """
+    Remove the concerts whose date is inside an interval given by the user
+    :param concerts: dictionary of concerts, keyed by id
+    :type concerts: dict
+    :return: None
+    """
     if not concerts:
         print("No concerts available to remove.\n")
         return
+
+    opt2_extras.print_dates(concerts)
 
     start_str = input("Input start date (e.g: 11.09.2026): ")
     end_str = input("Input end date (e.g: 13.09.2026): ")
