@@ -1,4 +1,18 @@
 def add_concert(concerts, artist, city, date, price):
+    """
+    Add a new concert to the concert dictionary
+    :param concerts: dictionary of concerts, keyed by id
+    :type concerts: dict
+    :param artist: name of the artist or band
+    :type artist: str
+    :param city: city where the concert takes place
+    :type city: str
+    :param date: concert date, in the form dd.mm.yyyy
+    :type date: str
+    :param price: ticket price
+    :type price: int
+    :return: None
+    """
     new_id = len(concerts) + 1
     concerts[new_id] = {
         "artist": artist,
@@ -9,14 +23,40 @@ def add_concert(concerts, artist, city, date, price):
 
 
 def modify_concert_date(concerts, concert_id, new_date):
+    """
+    Change the date of an existing concert
+    :param concerts: dictionary of concerts, keyed by id
+    :type concerts: dict
+    :param concert_id: id of the concert to change
+    :type concert_id: int
+    :param new_date: the new concert date, in the form dd.mm.yyyy
+    :type new_date: str
+    """
     concerts[concert_id]["date"] = new_date
 
 
 def modify_concert_price(concerts, concert_id, new_price):
+    """
+    Change the ticket price of an existing concert
+    :param concerts: dictionary of concerts, keyed by id
+    :type concerts: dict
+    :param concert_id: id of the concert to change
+    :type concert_id: int
+    :param new_price: the new ticket price
+    :type new_price: int
+    """
     concerts[concert_id]["price"] = new_price
 
 
 def remove_by_artist(concerts, artist):
+    """
+    Delete every concert of a given artist and renumber the rest
+    :param concerts: dictionary of concerts, keyed by id
+    :type concerts: dict
+    :param artist: artist name to delete, in lower case
+    :type artist: str
+    :return: None
+    """
     remaining = []
     for c in concerts.values():
         current_artist = c["artist"].strip().lower()
@@ -36,6 +76,16 @@ def remove_by_artist(concerts, artist):
 
 
 def remove_by_price(concerts, min_price, max_price):
+    """
+    Delete every concert whose ticket price is in a given interval and renumber the rest
+    :param concerts: dictionary of concerts, keyed by id
+    :type concerts: dict
+    :param min_price: lowest price of the interval, included
+    :type min_price: int
+    :param max_price: highest price of the interval, included
+    :type max_price: int
+    :return: None
+    """
     remaining = []
     for c in concerts.values():
         current_price = c["price"]
@@ -55,6 +105,16 @@ def remove_by_price(concerts, min_price, max_price):
 
 
 def remove_by_date(concerts, start_tuple, end_tuple):
+    """
+    Delete every concert whose date is in a given interval and renumber the rest
+    :param concerts: dictionary of concerts, keyed by id
+    :type concerts: dict
+    :param start_tuple: start of the interval, as (year, month, day)
+    :type start_tuple: tuple
+    :param end_tuple: end of the interval, as (year, month, day)
+    :type end_tuple: tuple
+    :return: None
+    """
     remaining = []
     for c in concerts.values():
         c_date = c["date"]
