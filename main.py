@@ -4,7 +4,7 @@ import opt3_main
 import opt4_main
 import opt5_main
 import opt6_main
-# opt 3 separat pentru a face teste usor (cum am facut la opt1 si 2)
+
 # remove by criteria iti trebuie un search sau ceva (daca e lista gigantica ce faci)
 
 
@@ -12,6 +12,10 @@ concerts = {}
 
 
 def opt1():
+    """
+    Show the add and modify menu and run the chosen option
+    :return: None
+    """
     print("\n1. Add a new concert")
     print("2. Modify the information of an existing performer")
     inmenuopt = input("Choose option: ").strip().upper()
@@ -24,6 +28,10 @@ def opt1():
 
 
 def opt2():
+    """
+    Show the remove menu and run the chosen option
+    :return: None
+    """
     print("\n1. Delete all concerts for an artist")
     print("2. Delete all concerts with ticket prices in a given interval")
     print("3. Delete all concerts taking place in a given interval")
@@ -39,6 +47,10 @@ def opt2():
 
 
 def opt3():
+    """
+    Show the display menu and run the chosen option
+    :return: None
+    """
     print("\n1. Print all concerts from a given city")
     print("2. Print all concerts from an artist taking place in a given city")
     print("3. Print all concerts from an artist with ticket prices lower than a given price")
@@ -54,6 +66,10 @@ def opt3():
 
 
 def opt4():
+    """
+    Show the reports menu and run the chosen option
+    :return: None
+    """
     print("\n1. Print the average ticket price for an artist")
     print("Print the number of concerts per city")
     print("Print the concerts in a given interval, sorted in ascending order by ticket price")
@@ -72,6 +88,10 @@ def opt4():
 
 
 def opt5():
+    """
+    Show the filter menu and run the chosen option
+    :return: None
+    """
     print(
         "\n1. Eliminate concerts by artists in a user-given list for which ticket prices are greater than a given price")
     print("Eliminate concerts for which the ticket price exceeds a given value or the date is after a given date")
@@ -85,6 +105,10 @@ def opt5():
 
 
 def opt6():
+    """
+    Ask for confirmation and undo the last modification
+    :return: None
+    """
     print("\nAre you sure you want to undo last modification?")
     inmenuopt = input("Choose option: ").strip().upper()
     if inmenuopt == 'Y':
@@ -94,6 +118,10 @@ def opt6():
 
 
 def main():
+    """
+    Run the main menu until the user chooses to exit
+    :return: None
+    """
     while True:
         print("\n1. Add and modify concerts")
         print("2. Remove concerts")
