@@ -1,4 +1,15 @@
 def datevalid(an, luna, zi):
+    """
+    Check whether a date is a real day of the calendar
+    :param an: the year
+    :type an: int
+    :param luna: the month, from 1 to 12
+    :type luna: int
+    :param zi: the day of the month
+    :type zi: int
+    :return: True if the date is valid, False otherwise
+    :rtype: bool
+    """
     este_bisect = (an % 4 == 0 and an % 100 != 0) or (an % 400 == 0)
 
     if an > 0 and 1 <= luna <= 12:
