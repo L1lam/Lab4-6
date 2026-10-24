@@ -3,6 +3,12 @@ import concertmodif
 
 
 def opt1_1(concerts):
+    """
+    Read and add one or more concerts, asking again for an invalid date
+    :param concerts: dictionary of concerts, keyed by id
+    :type concerts: dict
+    :return: None
+    """
     x = int(input("How many concerts would you like to add? "))
     for _ in range(x):
         artist = input("Input artist/band name: ")
@@ -23,6 +29,12 @@ def opt1_1(concerts):
 
 
 def opt1_2(concerts):
+    """
+    Let the user choose a concert and modify its date or its price
+    :param concerts: dictionary of concerts, keyed by id
+    :type concerts: dict
+    :return: None
+    """
     if not concerts:
         print("No concerts available to modify.\n")
         return
