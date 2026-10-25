@@ -32,8 +32,8 @@ def opt2_2(concerts):
 
     opt2_extras.print_prices(concerts)
 
-    min_price = int(input("Input minimum price: "))
-    max_price = int(input("Input maximum price: "))
+    min_price = float(input("Input minimum price: "))
+    max_price = float(input("Input maximum price: "))
     concertmodif.remove_by_price(concerts, min_price, max_price)
 
 
