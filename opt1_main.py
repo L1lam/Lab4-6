@@ -23,7 +23,7 @@ def opt1_1(concerts):
             an = int(date[-4:])
             luna = int(date[3:5])
             zi = int(date[:2])
-        price = int(input("Input ticket price: "))
+        price = float(input("Input ticket price: "))
         concertmodif.add_concert(concerts, artist, city, date, price)
         print("Concert added successfully!\n")
 
@@ -48,6 +48,7 @@ def opt1_2(concerts):
         print("Invalid option. Please try again.")
         x = int(input())
 
+    date_modified = False
     print("Would you like to modify the date? (Y/N)")
     conf = input().strip().upper()
     if conf == 'Y':
@@ -62,6 +63,7 @@ def opt1_2(concerts):
             luna = int(new_date[3:5])
             zi = int(new_date[:2])
         concertmodif.modify_concert_date(concerts, x, new_date)
+        date_modified = True
         print("Date modified successfully!")
     elif conf == 'N':
         pass
@@ -71,8 +73,8 @@ def opt1_2(concerts):
     print("Would you like to modify the ticket price? (Y/N)")
     conf = input().strip().upper()
     if conf == 'Y':
-        new_price = int(input("Input new ticket price: "))
-        concertmodif.modify_concert_price(concerts, x, new_price)
+        new_price = float(input("Input new ticket price: "))
+        concertmodif.modify_concert_price(concerts, x, new_price, save=not date_modified)
         print("Price modified successfully!")
     elif conf == 'N':
         pass
