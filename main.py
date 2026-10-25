@@ -71,9 +71,9 @@ def opt4():
     :return: None
     """
     print("\n1. Print the average ticket price for an artist")
-    print("Print the number of concerts per city")
-    print("Print the concerts in a given interval, sorted in ascending order by ticket price")
-    print("Print the concerts from a given interval which take place in a given city")
+    print("2. Print the number of concerts per city")
+    print("3. Print the concerts in a given interval, sorted in ascending order by ticket price")
+    print("4. Print the concerts from a given interval which take place in a given city")
     inmenuopt = input("Choose option: ").strip().upper()
     if inmenuopt == '1':
         opt4_main.opt4_1(concerts)
@@ -94,7 +94,7 @@ def opt5():
     """
     print(
         "\n1. Eliminate concerts by artists in a user-given list for which ticket prices are greater than a given price")
-    print("Eliminate concerts for which the ticket price exceeds a given value or the date is after a given date")
+    print("2. Eliminate concerts for which the ticket price exceeds a given value or the date is after a given date")
     inmenuopt = input("Choose option: ").strip().upper()
     if inmenuopt == '1':
         opt5_main.opt5_1(concerts)
@@ -109,7 +109,7 @@ def opt6():
     Ask for confirmation and undo the last modification
     :return: None
     """
-    print("\nAre you sure you want to undo last modification?")
+    print("\nAre you sure you want to undo last modification? (Y/N)")
     inmenuopt = input("Choose option: ").strip().upper()
     if inmenuopt == 'Y':
         opt6_main.opt6(concerts)
